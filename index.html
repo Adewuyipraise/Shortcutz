@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Cutz Cr8tv Festival 2026</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C9A84C;
+            --gold-light: #E8D5A3;
+            --gold-dark: #A8893A;
+            --gold-gradient: linear-gradient(135deg, #C9A84C 0%, #E8D5A3 50%, #C9A84C 100%);
+            
+            --black: #0A0A0A;
+            --black-secondary: #1A1A1A;
+            --black-light: #2A2A2A;
+            
+            --white: #FFFFFF;
+            --white-smoke: #F5F5F5;
+            --gray-light: #E8E8E8;
+            --gray: #888888;
+            
+            --green: #8BC34A;
+            --green-dark: #689F38;
+            --green-light: #AED581;
+            
+            --brown: #5D4037;
+            --brown-light: #8D6E63;
+            --brown-dark: #3E2C24;
+            
+            --gradient-hero: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 50%, #2A1A0A 100%);
+            --gradient-gold: linear-gradient(135deg, #C9A84C 0%, #E8D5A3 50%, #C9A84C 100%);
+            --gradient-brown: linear-gradient(135deg, #5D4037 0%, #8D6E63 100%);
+            
+            --shadow-gold: 0 20px 60px rgba(201, 168, 76, 0.2);
+            --shadow-gold-hover: 0 30px 80px rgba(201, 168, 76, 0.35);
+            --shadow-dark: 0 20px 60px rgba(0, 0, 0, 0.4);
+            
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        /* ===== UTILITY ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(201, 168, 76, 0.12);
+            color: var(--gold);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .section-title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gold-gradient);
+            color: var(--black);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201, 168, 76, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .btn-green {
+            background: var(--green);
+            color: var(--black);
+            box-shadow: 0 10px 30px rgba(139, 195, 74, 0.3);
+        }
+
+        .btn-green:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(139, 195, 74, 0.4);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--black);
+            font-weight: 900;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            padding: 10px 24px;
+            background: var(--gold-gradient);
+            border-radius: 50px;
+            color: var(--black) !important;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+            color: var(--black) !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 2.5px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--gradient-hero);
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+        }
+
+        .hero-bg .circle:nth-child(1) {
+            width: 600px;
+            height: 600px;
+            background: var(--gold);
+            top: -200px;
+            right: -200px;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero-bg .circle:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            background: var(--green);
+            bottom: -100px;
+            left: -100px;
+            animation: float 25s infinite ease-in-out reverse;
+        }
+
+        .hero-bg .circle:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            background: var(--brown);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: float 30s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 20px 8px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .hero-stats .stat h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-stats .stat p {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0;
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--border-radius);
+            padding: 1px;
+            background: var(--gold-gradient);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-card .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-card .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .hero-card .feature-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .hero-card .feature-icon.gold { background: rgba(201, 168, 76, 0.2); color: var(--gold); }
+        .hero-card .feature-icon.green { background: rgba(139, 195, 74, 0.2); color: var(--green); }
+        .hero-card .feature-icon.brown { background: rgba(93, 64, 55, 0.3); color: var(--brown-light); }
+
+        .hero-card .feature-text h4 {
+            color: var(--white);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .hero-card .feature-text p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        section {
+            padding: 100px 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--white-smoke);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-placeholder {
+            background: var(--gradient-brown);
+            border-radius: var(--border-radius);
+            padding: 60px 40px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+        }
+
+        .about-image-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .about-image-placeholder .big-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-placeholder h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-image-placeholder p {
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content h2 {
+            font-size: clamp(2rem, 3vw, 2.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .about-features .item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--white-smoke);
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--gold);
+        }
+
+        .about-features .item i {
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        /* ===== FOCUS AREAS ===== */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .focus-item {
+            background: var(--white);
+            padding: 24px 16px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .focus-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--gold);
+        }
+
+        .focus-item i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .focus-item span {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ===== PROGRAMS ===== */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 36px 28px;
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--gold);
+        }
+
+        .program-card:hover::before {
+            opacity: 1;
+        }
+
+        .program-card .icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--black);
+            margin-bottom: 20px;
+            background: var(--gold-gradient);
+        }
+
+        .program-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .program-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+	/* ===== CTA WITH BACKGROUND IMAGE ===== */
+
+
+	.cta-section {
+	    position: relative;
+	    background: 
+		linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(93, 64, 55, 0.8) 100%),
+		url('hero1.jpeg');
+	    background-size: cover;
+	    background-position: center;
+	    background-attachment: fixed;
+	    min-height: 500px;
+	    display: flex;
+	    align-items: center;
+	    border-top: 2px solid var(--gold);
+	    border-bottom: 2px solid var(--gold);
+	}
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(93, 64, 55, 0.8) 100%), url("hero1.jpeg");
+        }
+
+	.cta-section .container {
+	    position: relative;
+	    z-index: 1;
+	    text-align: center;
+	    color: var(--white);
+	}
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .cta-section h2 .highlight-gold {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--black-secondary);
+            padding: 60px 0 30px;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            max-width: 300px;
+        }
+
+        .footer h4 {
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer ul a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-socials a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+            text-decoration: none;
+            border: 1px solid rgba(201, 168, 76, 0.1);
+        }
+
+        .footer-socials a:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+            border-color: var(--gold);
+        }
+
+        /* ===== NOTIFICATION ===== */
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--black-secondary);
+            color: var(--white);
+            padding: 16px 24px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateY(120px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 999;
+            max-width: 400px;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .notification .close {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 0 4px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-card {
+                max-width: 100%;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 120px 0 60px;
+            }
+
+            .notification {
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero-card {
+                padding: 24px;
+            }
+
+            .program-card {
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.jpg" class="logo-icon">
+                Short Cutz
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#focus">Focus Areas</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#cta" class="nav-cta">Get Involved</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="hero3.jpg" alt="Short Cutz Festival" style="border-radius: 0px; width: 100%;">
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Badagry, Lagos • November 2026
+                </div>
+                <h1>
+                    Discover. Develop.<br>
+                    <span class="highlight">Celebrate.</span>
+                </h1>
+                <p>
+                    The future of Nigerian storytelling is here. A multidisciplinary creative 
+                    festival for emerging talents in film, digital media, arts, and innovation.
+                </p>
+                <div class="hero-actions">
+                    <a href="#cta" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Join the Waitlist
+                    </a>
+                    <a href="#programs" class="btn btn-secondary">
+                        <i class="fas fa-play"></i> Explore
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>4</h3>
+                        <p>Days of Creativity</p>
+                    </div>
+                    <div class="stat">
+                        <h3>20+</h3>
+                        <p>Masterclasses</p>
+                    </div>
+                    <div class="stat">
+                        <h3>100+</h3>
+                        <p>Creative Talents</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="feature-item">
+                        <div class="feature-icon gold"><i class="fas fa-film"></i></div>
+                        <div class="feature-text">
+                            <h4>Short Film & Documentary</h4>
+                            <p>Curated screenings & conversations</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon green"><i class="fas fa-paint-brush"></i></div>
+                        <div class="feature-text">
+                            <h4>Creative Masterclasses</h4>
+                            <p>Learn from industry professionals</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon brown"><i class="fas fa-users"></i></div>
+                        <div class="feature-text">
+                            <h4>Networking & Collaboration</h4>
+                            <p>Connect with creators & mentors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <div class="big-icon">🎬</div>
+                        <h3>Short Cutz Cr8tv Festival 2026</h3>
+                        <p>Badagry, Lagos State, Nigeria</p>
+                        <p style="font-size: 0.85rem; margin-top: 12px; opacity: 0.7;">Organised by Bigplus Media & Network Services</p>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-badge">About the Festival</span>
+                    <h2>Empowering the Next Generation of <span>Creative</span> Talent</h2>
+                    <p>
+                        The Short Cutz Cr8tv Festival is a multidisciplinary creative and cultural festival 
+                        designed to discover, develop, celebrate, and promote emerging creative talents while 
+                        using the power of arts, culture, storytelling, film, media, technology, and entertainment 
+                        to inspire positive social development.
+                    </p>
+                    <p>
+                        With Badagry as the host community, the festival will promote its rich cultural heritage, 
+                        history, tourism potential, and creative identity while positioning it as a hub for 
+                        creative expression, cultural exchange, and artistic innovation.
+                    </p>
+                    <div class="about-features">
+                        <div class="item"><i class="fas fa-check-circle"></i> Talent Discovery</div>
+                        <div class="item"><i class="fas fa-check-circle"></i> Creative Education</div>
+                        <div class="item"><i class="fas fa-check-circle"></i> Youth Empowerment</div>
+                        <div class="item"><i class="fas fa-check-circle"></i> Cultural Celebration</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOCUS AREAS ===== -->
+    <section id="focus" style="background: var(--white-smoke);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Creative Focus</span>
+                <h2 class="section-title">What We <span>Celebrate</span></h2>
+                <p class="section-subtitle">From traditional arts to emerging technologies — we champion it all.</p>
+            </div>
+            <div class="focus-grid">
+                <div class="focus-item"><i class="fas fa-film"></i><span>Filmmaking</span></div>
+                <div class="focus-item"><i class="fas fa-music"></i><span>Music Production</span></div>
+                <div class="focus-item"><i class="fas fa-paint-brush"></i><span>Visual Arts</span></div>
+                <div class="focus-item"><i class="fas fa-camera"></i><span>Photography</span></div>
+                <div class="focus-item"><i class="fas fa-robot"></i><span>AI & Digital Art</span></div>
+                <div class="focus-item"><i class="fas fa-video"></i><span>Animation</span></div>
+                <div class="focus-item"><i class="fas fa-pen-nib"></i><span>Screenwriting</span></div>
+                <div class="focus-item"><i class="fas fa-microphone-alt"></i><span>Audio Storytelling</span></div>
+                <div class="focus-item"><i class="fas fa-podcast"></i><span>Podcasting</span></div>
+                <div class="focus-item"><i class="fas fa-palette"></i><span>Graphic Design</span></div>
+                <div class="focus-item"><i class="fas fa-theater-masks"></i><span>Acting</span></div>
+                <div class="focus-item"><i class="fas fa-cut"></i><span>Video Editing</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROGRAMS ===== -->
+    <section id="programs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Festival Programs</span>
+                <h2 class="section-title">What to <span>Experience</span></h2>
+                <p class="section-subtitle">Four days of creativity, learning, and connection.</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="icon"><i class="fas fa-film"></i></div>
+                    <h3>Film Screenings</h3>
+                    <p>Curated screenings of short films and documentaries, followed by conversations with filmmakers and audiences.</p>
+                </div>
+                <div class="program-card">
+                    <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Creative Masterclasses</h3>
+                    <p>Practical sessions covering filmmaking, directing, cinematography, screenwriting, editing, sound, and more.</p>
+                </div>
+                <div class="program-card">
+                    <div class="icon"><i class="fas fa-microphone-alt"></i></div>
+                    <h3>Industry Panels</h3>
+                    <p>Conversations with professionals addressing opportunities, emerging technologies, monetisation, and career development.</p>
+                </div>
+                <div class="program-card">
+                    <div class="icon"><i class="fas fa-robot"></i></div>
+                    <h3>Digital & AI Showcase</h3>
+                    <p>Innovative use of AI tools, digital production techniques, animation, visual effects, and new media storytelling.</p>
+                </div>
+                <div class="program-card">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>Talent Showcase</h3>
+                    <p>Opportunities for emerging talents to present their work to industry professionals and audiences.</p>
+                </div>
+                <div class="program-card">
+                    <div class="icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Networking Sessions</h3>
+                    <p>Structured meeting points for creators, producers, media organisations, sponsors, and potential collaborators.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+	<section class="cta-section" id="cta">
+	    <div class="container">
+		<span class="section-badge" style="background: rgba(201, 168, 76, 0.15); color: var(--gold); border-color: rgba(201, 168, 76, 0.3);">Get Involved</span>
+		<h2>Ready to Make Your <span class="highlight-gold">Mark</span>?</h2>
+		<p>
+		    Join the waitlist to receive updates, early access, and exclusive opportunities 
+		    for the Short Cutz Cr8tv Festival 2026.
+		</p>
+		<div class="cta-actions">
+		    <a href="#" class="btn btn-primary" onclick="openEmail()">
+		        <i class="fas fa-envelope"></i> Join the Waitlist
+		    </a>
+		    <a href="mailto:shortcutzcr8tvfest@gmail.com" class="btn btn-secondary">
+		        <i class="fas fa-building"></i> Partner With Us
+		    </a>
+		</div>
+		<p style="margin-top: 24px; font-size: 0.85rem; opacity: 0.5;">
+		    <i class="fas fa-shield-alt"></i> No spam, unsubscribe anytime.
+		</p>
+	    </div>
+	</section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo" style="font-size: 1.3rem;">
+                        <span class="logo-icon" style="width: 40px; height: 40px; font-size: 1rem;">SC</span>
+                        Short Cutz
+                    </a>
+                    <p>
+                        A multidisciplinary creative festival by Bigplus Media and Network Services, 
+                        celebrating emerging talent in Badagry, Lagos.
+                    </p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#focus">Focus Areas</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#cta">Get Involved</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:shortcutzcr8tvfest@gmail.com">shortcutzcr8tvfest@gmail.com</a></li>
+                        <li><a href="tel:08161232797">0816 123 2797</a></li>
+                        <li style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Plot 15, Fishers of Men Close,<br>Ilu'nla, Aradagun, Badagry, Lagos.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-instagram" style="margin-right: 8px;"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-twitter" style="margin-right: 8px;"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in" style="margin-right: 8px;"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="fab fa-youtube" style="margin-right: 8px;"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Short Cutz Cr8tv Festival. All rights reserved.</span>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== NOTIFICATION ===== -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle" style="color: var(--green);"></i>
+        <span id="notificationMessage">Thanks! You're on the list.</span>
+        <button class="close" onclick="closeNotification()">&times;</button>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ===== HAMBURGER MENU =====
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // ===== EMAIL SUBSCRIPTION =====
+        function openEmail() {
+            const email = 'shortcutzcr8tvfest@gmail.com';
+            const subject = encodeURIComponent('Waitlist Registration - Short Cutz Festival 2026');
+            const body = encodeURIComponent(
+                'Hello Short Cutz Team,\n\n' +
+                'I would like to join the waitlist for the Short Cutz Cr8tv Festival 2026.\n\n' +
+                'Name: \n' +
+                'Email: \n' +
+                'Role/Interest: (e.g., Filmmaker, Artist, Partner, Attendee)\n\n' +
+                'Thank you!'
+            );
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+            
+            // Show notification
+            showNotification('Check your email client to complete your registration.');
+        }
+
+        // ===== NOTIFICATION SYSTEM =====
+        let notificationTimeout;
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const messageEl = document.getElementById('notificationMessage');
+            
+            messageEl.textContent = message;
+            notification.classList.add('show');
+            
+            clearTimeout(notificationTimeout);
+            notificationTimeout = setTimeout(() => {
+                notification.classList.remove('show');
+            }, 8000);
+        }
+
+        function closeNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('show');
+            clearTimeout(notificationTimeout);
+        }
+
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ===== KEYBOARD ACCESSIBILITY =====
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeNotification();
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            }
+        });
+
+        console.log('🎬 Short Cutz Cr8tv Festival 2026');
+        console.log('📧 shortcutzcr8tvfest@gmail.com');
+        console.log('📱 0816 123 2797');
+    </script>
+
+</body>
+</html>
