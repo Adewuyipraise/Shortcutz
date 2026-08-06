@@ -753,6 +753,249 @@
             justify-content: center;
             gap: 16px;
         }
+        
+        
+        /* ===== MODAL STYLES ===== */
+	.modal-overlay {
+	    position: fixed;
+	    inset: 0;
+	    z-index: 9999;
+	    background: rgba(0, 0, 0, 0.85);
+	    backdrop-filter: blur(10px);
+	    display: none;
+	    align-items: center;
+	    justify-content: center;
+	    padding: 20px;
+	    animation: modalFadeIn 0.3s ease;
+	}
+
+	.modal-overlay.active {
+	    display: flex;
+	}
+
+	@keyframes modalFadeIn {
+	    from {
+		opacity: 0;
+		transform: scale(0.95) translateY(20px);
+	    }
+	    to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	    }
+	}
+
+	.modal-container {
+	    background: var(--white);
+	    border-radius: var(--border-radius);
+	    width: 100%;
+	    max-width: 700px;
+	    max-height: 90vh;
+	    overflow: hidden;
+	    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+	    border: 2px solid var(--gold);
+	    display: flex;
+	    flex-direction: column;
+	}
+
+	.modal-header {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    padding: 20px 24px;
+	    background: var(--black);
+	    border-bottom: 2px solid var(--gold);
+	    flex-shrink: 0;
+	}
+
+	.modal-header h2 {
+	    color: var(--white);
+	    font-size: 1.3rem;
+	    font-weight: 700;
+	    margin: 0;
+	}
+
+	.modal-header h2 .gold-text {
+	    color: var(--gold);
+	}
+
+	.modal-close {
+	    background: rgba(255, 255, 255, 0.1);
+	    border: none;
+	    color: var(--white);
+	    width: 36px;
+	    height: 36px;
+	    border-radius: 50%;
+	    font-size: 1.2rem;
+	    cursor: pointer;
+	    transition: var(--transition);
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+
+	.modal-close:hover {
+	    background: rgba(255, 255, 255, 0.2);
+	    transform: rotate(90deg);
+	}
+
+	.modal-body {
+	    padding: 0;
+	    flex: 1;
+	    overflow: hidden;
+	    min-height: 400px;
+	    max-height: calc(90vh - 140px);
+	}
+
+	.modal-iframe-wrapper {
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+	    min-height: 500px;
+	}
+
+	.modal-iframe {
+	    width: 100%;
+	    height: 100%;
+	    min-height: 500px;
+	    border: none;
+	    background: var(--white);
+	}
+
+	/* Loading spinner */
+	.modal-iframe-wrapper::before {
+	    content: '';
+	    position: absolute;
+	    inset: 0;
+	    background: var(--white);
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    z-index: 0;
+	}
+
+	.modal-iframe-wrapper::after {
+	    content: '';
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    width: 40px;
+	    height: 40px;
+	    border: 4px solid var(--gray-light);
+	    border-top-color: var(--gold);
+	    border-radius: 50%;
+	    animation: spinner 0.8s linear infinite;
+	    z-index: 0;
+	}
+
+	@keyframes spinner {
+	    to { transform: translate(-50%, -50%) rotate(360deg); }
+	}
+
+	.modal-iframe {
+	    position: relative;
+	    z-index: 1;
+	}
+
+	.modal-footer {
+	    padding: 12px 24px;
+	    background: var(--white-smoke);
+	    border-top: 1px solid var(--gray-light);
+	    flex-shrink: 0;
+	    text-align: center;
+	}
+
+	.modal-footer p {
+	    margin: 0;
+	    color: var(--gray);
+	    font-size: 0.8rem;
+	}
+
+	/* ===== RESPONSIVE MODAL ===== */
+	@media (max-width: 768px) {
+	    .modal-overlay {
+		padding: 10px;
+	    }
+
+	    .modal-container {
+		max-width: 100%;
+		max-height: 95vh;
+		border-radius: 16px;
+	    }
+
+	    .modal-header {
+		padding: 16px 18px;
+	    }
+
+	    .modal-header h2 {
+		font-size: 1.1rem;
+	    }
+
+	    .modal-body {
+		min-height: 300px;
+		max-height: calc(95vh - 120px);
+	    }
+
+	    .modal-iframe-wrapper {
+		min-height: 400px;
+	    }
+
+	    .modal-iframe {
+		min-height: 400px;
+	    }
+
+	    .modal-footer {
+		padding: 10px 16px;
+	    }
+
+	    .modal-footer p {
+		font-size: 0.7rem;
+	    }
+
+	    .modal-close {
+		width: 32px;
+		height: 32px;
+		font-size: 1rem;
+	    }
+	}
+
+	@media (max-width: 480px) {
+	    .modal-container {
+		max-height: 98vh;
+		border-radius: 12px;
+		border-width: 1px;
+	    }
+
+	    .modal-header {
+		padding: 14px 14px;
+	    }
+
+	    .modal-header h2 {
+		font-size: 1rem;
+	    }
+
+	    .modal-body {
+		min-height: 250px;
+		max-height: calc(98vh - 110px);
+	    }
+
+	    .modal-iframe-wrapper {
+		min-height: 350px;
+	    }
+
+	    .modal-iframe {
+		min-height: 350px;
+	    }
+
+	    .modal-footer {
+		padding: 8px 12px;
+	    }
+	}
+
+	/* Body scroll lock when modal is open */
+	body.modal-open {
+	    overflow: hidden;
+	}
 
 
         /* ===== FOOTER ===== */
@@ -1414,10 +1657,10 @@
 		    for the Short Cutz Cr8tv Festival 2026.
 		</p>
 		<div class="cta-actions">
-		    <a href="#" class="btn btn-primary" onclick="openEmail()">
+		    <a href="#" class="btn btn-primary" onclick="openWaitlistForm(); return false;">
 		        <i class="fas fa-envelope"></i> Join the Waitlist
 		    </a>
-		    <a href="mailto:shortcutzcr8tvfest@gmail.com" class="btn btn-secondary">
+		    <a href="#" class="btn btn-secondary" onclick="openPartnerForm(); return false;">
 		        <i class="fas fa-building"></i> Partner With Us
 		    </a>
 		</div>
@@ -1489,6 +1732,38 @@
         <button class="close" onclick="closeNotification()">&times;</button>
     </div>
 
+	<!-- ===== GOOGLE FORM MODAL ===== -->
+	<div class="modal-overlay" id="formModal">
+	    <div class="modal-container">
+		<div class="modal-header">
+		    <h2 id="modalTitle">Join the Waitlist</h2>
+		    <button class="modal-close" onclick="closeModal()">
+		        <i class="fas fa-times"></i>
+		    </button>
+		</div>
+		<div class="modal-body">
+		    <div class="modal-iframe-wrapper">
+		        <iframe 
+		            id="formIframe"
+		            src="https://docs.google.com/forms/d/e/1FAIpQLSfsoNt0uCGJmihCdcv2_xc-MP-a8QsgcgXe0Q2bIL7qncT6cA/viewform?embedded=true"
+		            frameborder="0"
+		            marginheight="0"
+		            marginwidth="0"
+		            loading="lazy"
+		            class="modal-iframe"
+		        >
+		            Loading…
+		        </iframe>
+		    </div>
+		</div>
+		<div class="modal-footer">
+		    <p style="font-size: 0.8rem; color: var(--gray);">
+		        <i class="fas fa-lock"></i> Your information is secure and will not be shared.
+		    </p>
+		</div>
+	    </div>
+	</div>
+
     <!-- ===== JAVASCRIPT ===== -->
     <script>
         // ===== NAVBAR SCROLL =====
@@ -1517,6 +1792,70 @@
                 navLinks.classList.remove('open');
             });
         });
+
+	// ===== GOOGLE FORM MODAL =====
+	const formModal = document.getElementById('formModal');
+	const formIframe = document.getElementById('formIframe');
+	const modalTitle = document.getElementById('modalTitle');
+
+	// Form URLs
+	const FORMS = {
+	    waitlist: 'https://docs.google.com/forms/d/e/1FAIpQLSfsoNt0uCGJmihCdcv2_xc-MP-a8QsgcgXe0Q2bIL7qncT6cA/viewform?embedded=true',
+	    partner: 'https://docs.google.com/forms/d/e/1FAIpQLSfsoNt0uCGJmihCdcv2_xc-MP-a8QsgcgXe0Q2bIL7qncT6cA/viewform?embedded=true'
+	};
+
+	function openModal(formType) {
+	    // Set the iframe source
+	    if (formType === 'waitlist') {
+		formIframe.src = FORMS.waitlist;
+		modalTitle.innerHTML = 'Join the <span class="gold-text">Waitlist</span>';
+	    } else if (formType === 'partner') {
+		formIframe.src = FORMS.partner;
+		modalTitle.innerHTML = 'Partner With <span class="gold-text">Us</span>';
+	    }
+	    
+	    // Show modal
+	    formModal.classList.add('active');
+	    document.body.classList.add('modal-open');
+	    
+	    // Reset iframe loading state (remove old spinner)
+	    const wrapper = document.querySelector('.modal-iframe-wrapper');
+	    wrapper.style.setProperty('--spinner-opacity', '1');
+	}
+
+	function closeModal() {
+	    formModal.classList.remove('active');
+	    document.body.classList.remove('modal-open');
+	    
+	    // Clear iframe after closing (optional, prevents form state from persisting)
+	    setTimeout(() => {
+		formIframe.src = '';
+	    }, 300);
+	}
+
+	// Close modal on overlay click
+	formModal.addEventListener('click', function(e) {
+	    if (e.target === this) {
+		closeModal();
+	    }
+	});
+
+	// Close modal on Escape key
+	document.addEventListener('keydown', function(e) {
+	    if (e.key === 'Escape' && formModal.classList.contains('active')) {
+		closeModal();
+	    }
+	});
+
+	// Update your button click handlers
+	function openWaitlistForm() {
+	    openModal('waitlist');
+	}
+
+	function openPartnerForm() {
+	    openModal('partner');
+	}
+
 
         // ===== EMAIL SUBSCRIPTION =====
         function openEmail() {
